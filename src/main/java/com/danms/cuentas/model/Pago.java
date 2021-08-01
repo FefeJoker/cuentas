@@ -1,5 +1,7 @@
 package com.danms.cuentas.model;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -9,10 +11,13 @@ public class Pago {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer Id;
+    @NotNull
     private Date fechaPago;
     @OneToOne(cascade = CascadeType.ALL)
+    @NotNull
     private MedioPago medio;
-    private Integer id_Cliente;
+    @NotNull
+    private Cliente cliente;
 
     public Integer getId() {
         return Id;
@@ -30,12 +35,12 @@ public class Pago {
         this.fechaPago = fechaPago;
     }
 
-    public Integer getId_Cliente() {
-        return id_Cliente;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setId_Cliente(Integer id_Cliente) {
-        this.id_Cliente = id_Cliente;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
 }
