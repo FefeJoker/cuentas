@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 
-public class MedioPago {
+public abstract class MedioPago {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;

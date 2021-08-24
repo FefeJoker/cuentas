@@ -17,7 +17,7 @@ public class ClienteConverter implements
 
     @Override
     public Cliente convertToEntityAttribute(Integer idCliente) {
-        String url = "http://localhost:9000/" + "api";
+        String url = "http://backend.fehler.gregoret.com.ar:8085/usuarios-service" + "api";
         WebClient client = WebClient.create(url);
         ResponseEntity<Cliente> result = client.get()
                 .uri("/api/pedido/-1/{id}", idCliente).accept(MediaType.APPLICATION_JSON)
